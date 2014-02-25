@@ -1,0 +1,8 @@
+inherit kde4
+
+NAME="krdc"
+VERSION=4.11.5
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="KDE VNC client"
+DESCRIPTION="Part of the KDE networking suite"

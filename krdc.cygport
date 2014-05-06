@@ -1,8 +1,10 @@
 inherit kde4
 
 NAME="krdc"
-VERSION=4.11.5
+VERSION=4.12.5
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="KDE VNC client"
 DESCRIPTION="Part of the KDE networking suite"
+
+PATCH_URI="4.12.5-cygwin.patch"

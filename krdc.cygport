@@ -8,3 +8,6 @@ SUMMARY="KDE VNC client"
 DESCRIPTION="Part of the KDE networking suite"
 
 PATCH_URI="4.12.5-cygwin.patch"
+
+# xfreerdp used for RDP
+REQUIRES="freerdp"

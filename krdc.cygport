@@ -1,13 +1,16 @@
-inherit kde4
+inherit kf5
 
 NAME="krdc"
-VERSION=15.04.3
+VERSION=16.08.3
 RELEASE=1
 CATEGORY="Net"
 SUMMARY="KDE VNC client"
 DESCRIPTION="Part of the KDE networking suite"
 
-PATCH_URI="4.12.5-cygwin.patch"
+PATCH_URI="
+	16.08-cmake-install.patch
+	16.08-cygwin-tcp.patch
+"
 
 # xfreerdp used for RDP
-REQUIRES="freerdp kde-runtime"
+REQUIRES="freerdp"

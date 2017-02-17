@@ -1,0 +1,60 @@
+--- origsrc/krdc-16.08.3/konsole/CMakeLists.txt	2016-11-06 17:26:22.000000000 -0600
++++ src/krdc-16.08.3/konsole/CMakeLists.txt	2016-11-14 00:36:08.985101700 -0600
+@@ -5,7 +5,7 @@ if (BUILD_KONSOLE)
+       konsoleview.cpp
+   )
+ 
+-  add_library(krdc_konsoleplugin ${konsoleplugin_SRCS})
++  add_library(krdc_konsoleplugin MODULE ${konsoleplugin_SRCS})
+ 
+   kcoreaddons_desktop_to_json(krdc_konsoleplugin krdc_test.desktop)
+ 
+--- origsrc/krdc-16.08.3/rdp/CMakeLists.txt	2016-11-06 17:26:22.000000000 -0600
++++ src/krdc-16.08.3/rdp/CMakeLists.txt	2016-11-14 00:39:14.095448100 -0600
+@@ -21,7 +21,7 @@ if(HAVE_XFREERDP)
+ 
+     ecm_qt_declare_logging_category(rdpplugin_SRCS HEADER krdc_debug.h IDENTIFIER KRDC CATEGORY_NAME KRDC)
+ 
+-    add_library(krdc_rdpplugin ${rdpplugin_SRCS})
++    add_library(krdc_rdpplugin MODULE ${rdpplugin_SRCS})
+     target_link_libraries(krdc_rdpplugin 
+         Qt5::Core
+         Qt5::Gui
+@@ -35,7 +35,7 @@ if(HAVE_XFREERDP)
+         rdppreferences.cpp
+     )
+ 
+-    add_library(kcm_krdc_rdpplugin ${kcm_krdc_rdpplugin_SRCS})
++    add_library(kcm_krdc_rdpplugin MODULE ${kcm_krdc_rdpplugin_SRCS})
+     target_link_libraries(kcm_krdc_rdpplugin
+         Qt5::Core
+         Qt5::Gui
+--- origsrc/krdc-16.08.3/test/CMakeLists.txt	2016-11-06 17:26:22.000000000 -0600
++++ src/krdc-16.08.3/test/CMakeLists.txt	2016-11-14 00:36:26.480848000 -0600
+@@ -26,5 +26,5 @@ if(BUILD_TEST)
+         Qt5::Gui
+         krdccore
+     )
+-    install(TARGETS krdc_testplugin DESTINATION ${PLUGIN_INSTALL_DIR}/krdc)
++#    install(TARGETS krdc_testplugin DESTINATION ${PLUGIN_INSTALL_DIR}/krdc)
+ endif(BUILD_TEST)
+--- origsrc/krdc-16.08.3/vnc/CMakeLists.txt	2016-11-06 17:26:22.000000000 -0600
++++ src/krdc-16.08.3/vnc/CMakeLists.txt	2016-11-14 00:38:18.544506200 -0600
+@@ -19,7 +19,7 @@ if(LIBVNCSERVER_FOUND)
+         vncpreferences.ui
+     )
+ 
+-    add_library(krdc_vncplugin ${vncplugin_SRCS})
++    add_library(krdc_vncplugin MODULE ${vncplugin_SRCS})
+     target_link_libraries(krdc_vncplugin
+         Qt5::Core
+         KF5::ConfigCore
+@@ -38,7 +38,7 @@ if(LIBVNCSERVER_FOUND)
+         vncpreferences.cpp
+     )
+ 
+-    add_library(kcm_krdc_vncplugin ${kcm_krdc_vncplugin_SRCS})
++    add_library(kcm_krdc_vncplugin MODULE ${kcm_krdc_vncplugin_SRCS})
+ 
+     target_link_libraries(kcm_krdc_vncplugin
+         Qt5::Core

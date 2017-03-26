@@ -14,3 +14,16 @@ PATCH_URI="
 
 # xfreerdp used for RDP
 REQUIRES="freerdp"
+
+src_install() {
+	cd ${B}
+	kf5_install
+
+	# https://bugs.kde.org/show_bug.cgi?id=365986
+	for i in $(find /usr/share/icons/oxygen/ -name 'krdc.*')
+	do
+		d=${i%/*}
+		insinto ${d/oxygen\/base/hicolor}
+		doins $i
+	done
+}

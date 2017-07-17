@@ -1,8 +1,8 @@
 inherit kf5
 
 NAME="krdc"
-VERSION=16.08.3
-RELEASE=2
+VERSION=17.04.3
+RELEASE=1
 CATEGORY="Net"
 SUMMARY="KDE VNC client"
 DESCRIPTION="Part of the KDE networking suite"
